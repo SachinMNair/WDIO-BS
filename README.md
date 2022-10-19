@@ -9,6 +9,11 @@
 
 `npm install`
 
+* Export credentials
+
+`export BROWSERSTACK_USERNAME=<browserstack-username>` <br>
+`export BROWSERSTACK_ACCESS_KEY=<browserstack-access-key>`
+
 ## Running your tests
 - Run the test <br>
 
@@ -16,5 +21,6 @@
 
 ## Points to be checked.
 
-- Check the time it takes for the website to load completely<br>
-- Check the local console logs, it would throw the timeout error
+- Check whether the website is loading or not before the session ends
+- If the website loads, check the time it took to load
+- Check the local console logs to see if there is any timeout error received

@@ -1,4 +1,6 @@
 exports.config = {
+    user: process.env.BROWSERSTACK_USERNAME || '',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || '',
     //
     // ====================
     // Runner Configuration
@@ -71,7 +73,11 @@ exports.config = {
         // 5 instances get started at a time.
         //maxInstances: 5,
         //
+        os: 'OS X',
+        osVersion: 'Monterey',
         browserName: 'chrome',
+        browserVersion: '106',
+        pageLoadStrategy: 'eager'
         //acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -131,8 +137,8 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     //services: ['chromedriver'],
-    services: [['selenium-standalone', {logPath: './log.txt'} ],],
-    
+    //services: [['selenium-standalone', {logPath: './log.txt'} ],],
+    services: [['browserstack']],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
